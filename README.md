@@ -1,6 +1,6 @@
 # C - printf
 
-Group project **"printf"** by Zack Yuan and Jose Olivia
+Group project **"printf"** by Zack Yuan and Jose Oliva
 
 ## Authorized Functions and Macros
 
