@@ -1,6 +1,5 @@
-#include <stdio.h>
-#ifdef _MAIN.H_
-#define _MAIN.H_
+#ifndef MAIN_H
+#define MAIN_H
 
 int _printf(const char *format, ...);
 
