@@ -16,7 +16,8 @@ int _printf(const char *format, ...)
 	}	
 	va_start(args, format); /*initialize args and format*/
 
-	for (const char *s = format; *s != '\0'; s++) /*iterates through format string*/
+	const char *s;
+	for (s = format; *s != '\0'; s++) /*iterates through format string*/
 	{
 		if (*s != '%') /*if char is not '%', print and continue*/
 		{
@@ -26,6 +27,12 @@ int _printf(const char *format, ...)
 		else
 		{
 			s++; /*moves to next character*/
+			if (*s == '\0')
+			{
+				putchar('%');
+				counter++;
+				break;
+			}
 			switch (*s)
 			{
 				case 'c': /*print character*/
@@ -55,3 +62,5 @@ int _printf(const char *format, ...)
 		}
 	va_end(args);
 	return (counter);
+}
+
