@@ -10,14 +10,13 @@ int _printf(const char *format, ...)
 {
 	int counter = 0; /*counter for characters printed*/
 	va_list args; /*handles variable arguemnts*/
+	const char *s;
 
 	if (format == NULL) /*if NULL, return -1*/
 	{
 		return (-1);
 	}	
 	va_start(args, format); /*initialize args and format*/
-
-	const char *s;
 
 	for (s = format; *s != '\0'; s++) /*iterates through format string*/
 	{
