@@ -20,12 +20,3 @@ void bin(long n)
                 }
         }
 }
-
-int main(void)
-{
-        bin(7);
-        printf("\n");
-        bin(4);
-
-        return 0;
-}
