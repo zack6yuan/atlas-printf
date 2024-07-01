@@ -7,25 +7,25 @@
  */
 int _printf(const char *format, ...)
 {
-	int counter = 0;
-	va_list args;
+	int counter = 0; /*counter for characters printed*/
+	va_list args; /*handles variable arguemnts*/
 
-	if (format == NULL)
+	if (format == NULL) /*if NULL, return -1*/
 	{
 		return (-1);
 	}	
-	va_start(args, format);
+	va_start(args, format); /*initialize args and format*/
 
-	for (const char *s = format; *s != '\0'; s++)
+	for (const char *s = format; *s != '\0'; s++) /*iterates through format string*/
 	{
-		if (*s != '%')
+		if (*s != '%') /*if char is not '%', print and continue*/
 		{
 			putchar(*s);
 			counter ++;
 		}		
 		else
 		{
-			s++;
+			s++; /*moves to next character*/
 			switch (*s)
 			{
 				case 'c': /*print character*/
