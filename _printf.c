@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * _printf - manual printf function
+ * _printf - manual printf function that handles "c, s, and %"
  * @format: char string composed of zero or more directives
  * Return: number of characters printed (excluding the null byte)
  */
