@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	va_start(args, format); /*initialize args and format*/
 
 	const char *s;
+
 	for (s = format; *s != '\0'; s++) /*iterates through format string*/
 	{
 		if (*s != '%') /*if char is not '%', print and continue*/
@@ -54,12 +55,19 @@ int _printf(const char *format, ...)
 				}
 				case '%': /*print '%' symbol*/
 				{
+					if (*s == '\0') /*checks if '%' if last char*/
+					{
+						putchar('%');
+						counter++;
+						break;
+					}
 					putchar('%');
 					counter++;
 					break;
 				}
 			}
 		}
+	}
 	va_end(args);
 	return (counter);
 }
