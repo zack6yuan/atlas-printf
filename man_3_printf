@@ -1,0 +1,26 @@
+.\" _printf man page /usr/share/man/man3/printf.3
+.\"
+.TH _Printf 3 "7/01/2024" "Project C"
+
+Name 
+_printf
+
+Sypnosis
+Part of the project at Atlas School
+This proyect mimic the printf found in C
+
+Descripcion
+_printf() the function produces output according to format string that specifies how subsequent argument are written and converted to stdout.
+This will though the format for a conversion specifer (%). The specified function will return a string-converted version of the result and immediately passed into the buffer
+
+Conversion Specifiers
+%s = prints string.
+%c = prints a character
+%d = prints a integer. Same as %i
+%i = Same as %d
+%u = prints unsigned int
+%o = converts unsigned int to octal
+%x = converts unsigned int to hexadecimal (lowercase)
+%X = converts unsigned int to hexadecimal (uppercase)
+%r = prints reverse of input string
+%R = Converts string to rot13
