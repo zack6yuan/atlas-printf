@@ -9,27 +9,27 @@
  */
 int _printf(const char *format, ...)
 {
-    int counter = 0; // Counter for characters printed
-    va_list args; // Handles variable arguments
+    int counter = 0; /*Counter for characters printed*/
+    va_list args; /*Handles variable arguments*/
     const char *s;
 
-    if (format == NULL) // If NULL, return -1
+    if (format == NULL) /*If NULL, return -1*/
     {
         return (-1);
     }
 
-    va_start(args, format); // Initialize args and format
+    va_start(args, format); /*Initialize args and format*/
 
-    for (s = format; *s != '\0'; s++) // Iterate through format string
+    for (s = format; *s != '\0'; s++) /*Iterate through format string*/
     {
-        if (*s != '%') // If char is not '%', print and continue
+        if (*s != '%') /*If char is not '%', print and continue*/
         {
             putchar(*s);
             counter++;
         }
         else
         {
-            s++; // Move to next character
+            s++; /*Move to next character*/
 
             if (*s == '\0')
             {
@@ -40,13 +40,13 @@ int _printf(const char *format, ...)
 
             switch (*s)
             {
-                case 'c': // Print character
+                case 'c': /*Print character*/
                     {
                         putchar(va_arg(args, int));
                         counter++;
                         break;
                     }
-                case 's': // Print string
+                case 's': /*Print string*/
                     {
                         char *str = va_arg(args, char*);
                         while (*str)
@@ -57,9 +57,9 @@ int _printf(const char *format, ...)
                         }
                         break;
                     }
-                case '%': // Print '%' symbol
+                case '%': /*Print '%' symbol*/
                     {
-                        if (*s == '\0') // Check if '%' is last char
+                        if (*s == '\0') /*Check if '%' is last char*/
                         {
                             putchar('%');
                             counter++;
